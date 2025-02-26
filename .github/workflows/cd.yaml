@@ -34,12 +34,12 @@ jobs:
       - name: Retrieve Chart Version
         id: chart_version
         run: |
-          VERSION=$(grep '^version:' chart/basic-app/Chart.yaml | awk '{print $2}')
+          VERSION=$(grep '^version:' charts/basic-app/Chart.yaml | awk '{print $2}')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Package Helm Chart
         run: |
-          helm package chart/basic-app
+          helm package charts/basic-app
 
       - name: Publish Helm Chart
         run: |
