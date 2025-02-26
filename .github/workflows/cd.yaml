@@ -1,0 +1,46 @@
+name: Publish Helm Chart to GCR
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  project_id: prj-ocp-dev-f9b4      
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+      - name: Install Helm
+        run: |
+          curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+          chmod 700 get_helm.sh
+          ./get_helm.sh
+
+      - name: Helm Registry Login
+        run: |
+          gcloud auth login --brief --cred-file <(echo '${{ secrets.GCP_SA_KEY }}')
+          helm registry login -u oauth2accesstoken -p $(gcloud auth print-access-token) us-east1-docker.pkg.dev
+
+      - name: Retrieve Chart Version
+        id: chart_version
+        run: |
+          VERSION=$(grep '^version:' chart/basic-app/Chart.yaml | awk '{print $2}')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Package Helm Chart
+        run: |
+          helm package chart/basic-app
+
+      - name: Publish Helm Chart
+        run: |
+          helm push basic-app-${VERSION}.tgz oci://us-east1-docker.pkg.dev/$project_id/helm-chart
