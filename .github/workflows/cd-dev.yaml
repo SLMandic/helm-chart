@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  project_id: prj-ocp-shared-vpc-f1a7      
+  project_id: prj-ocp-dev-f9b4      
 
 jobs:
   publish:
