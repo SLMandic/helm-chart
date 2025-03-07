@@ -49,6 +49,7 @@ Selector labels
 {{- define "basic-deployment.selectorLabels" -}}
 app: {{ include "basic-deployment.name" . }}
 orleans/serviceId: {{ include "basic-deployment.name" . }}
+orleans/clusterId: {{ include "basic-deployment.name" . }}
 app.kubernetes.io/name: {{ include "basic-deployment.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/instrumentation: "instrumentation-newrelic"
