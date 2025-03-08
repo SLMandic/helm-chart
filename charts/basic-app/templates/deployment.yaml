@@ -52,9 +52,7 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           env:                      
-            {{- if .Values.env }}
-            {{- toYaml .Values.env | nindent 10 }}
-            {{- end }}
+            {{- toYaml .Values.env | nindent 12 }}
             - name: ORLEANS_SERVICE_ID
               valueFrom:
                 fieldRef:
