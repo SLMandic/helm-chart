@@ -3,22 +3,32 @@ entries:
   basic-app:
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-04-15T14:10:25.511261-03:00"
+    created: "2025-05-21T09:10:39.767714028-03:00"
+    description: A Helm chart for simple Kubernetes applications
+    digest: c3383ac3d5cb761fd3274d1d57ba73ad8140b9bd7ec26592c5a52ebea1994fbe
+    name: basic-app
+    type: application
+    urls:
+    - https://providerocp.github.io/helm-chart/basic-app-0.0.11.tgz
+    version: 0.0.11
+  - apiVersion: v2
+    appVersion: 0.0.12
+    created: "2025-05-21T09:10:39.767036098-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: c6b7bb0e9478a39557c3d6d3add10345dfcf9dcbe4a6b2f17cf94d85bb229d26
     name: basic-app
     type: application
     urls:
-    - https://potential-guacamole-or96rq1.pages.github.io/basic-app-0.0.10.tgz
+    - https://providerocp.github.io/helm-chart/basic-app-0.0.10.tgz
     version: 0.0.10
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-04-15T14:10:25.514365-03:00"
+    created: "2025-05-21T09:10:39.768448981-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: 3c6f973c8b3e64b6a1d7ec2868245d4efc18c5ee5c6a0e86920504d41fda024e
     name: basic-app
     type: application
     urls:
-    - https://potential-guacamole-or96rq1.pages.github.io/basic-app-0.0.9.tgz
+    - https://providerocp.github.io/helm-chart/basic-app-0.0.9.tgz
     version: 0.0.9
-generated: "2025-04-15T14:10:25.509978-03:00"
+generated: "2025-05-21T09:10:39.76602811-03:00"
