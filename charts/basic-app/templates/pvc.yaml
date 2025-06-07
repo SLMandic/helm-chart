@@ -1,15 +1,11 @@
 {{ if .Values.storage.enabled -}}
 {{- with .Values.storage -}}
-{{- $pvc := (lookup "v1" "PersistentVolumeClaim" .Release.Namespace (printf "%s-data" .Release.Name)) }}
-{{- if not $pvc }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   labels:
     app: {{ $.Release.Name }}
   name: {{ $.Release.Name }}-data
-  annotations:
-    "helm.sh/resource-policy": keep  
 spec:
   accessModes:
     {{- toYaml .accessModes | nindent 4 }}
@@ -20,7 +16,6 @@ spec:
   volumeMode: {{ .volumeMode }}
 {{- if .volumeNamePrefix }}
   volumeName: {{ .volumeNamePrefix }}-{{ $.Release.Namespace }}-{{ $.Release.Name }}
-{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
