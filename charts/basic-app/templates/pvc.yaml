@@ -1,5 +1,7 @@
 {{ if .Values.storage.enabled -}}
 {{- with .Values.storage -}}
+{{- $pvc := (lookup "v1" "PersistentVolumeClaim" .Release.Namespace (printf "%s-data" .Release.Name)) }}
+{{- if not $pvc }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -18,6 +20,7 @@ spec:
   volumeMode: {{ .volumeMode }}
 {{- if .volumeNamePrefix }}
   volumeName: {{ .volumeNamePrefix }}-{{ $.Release.Namespace }}-{{ $.Release.Name }}
+{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
