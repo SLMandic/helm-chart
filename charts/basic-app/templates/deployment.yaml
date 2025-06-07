@@ -160,7 +160,7 @@ spec:
             name: {{ .Release.Name }}-config
       {{- end }}
       {{- if .Values.storage.enabled }}
-        - name: {{ .Release.Name }}-data
+        - name: {{ .Release.Name }}
           persistentVolumeClaim:
-            claimName: {{ .Release.Name }}-data
+            claimName: {{ .Release.Name }}
       {{- end }}
