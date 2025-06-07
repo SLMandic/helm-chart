@@ -5,7 +5,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     app: {{ $.Release.Name }}
-  name: {{ $.Release.Name }}
+  name: {{ $.Release.Name }}-data
 spec:
   accessModes:
     {{- toYaml .accessModes | nindent 4 }}
