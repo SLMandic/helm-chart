@@ -3,7 +3,17 @@ entries:
   basic-app:
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.404544219-03:00"
+    created: "2025-06-08T03:17:20.243459495-03:00"
+    description: A Helm chart for simple Kubernetes applications
+    digest: 409dfc470c861aa347c699da94d1ee1440aec9ad0b62e1863463e9d31c12a538
+    name: basic-app
+    type: application
+    urls:
+    - https://providerocp.github.io/helm-chart/basic-app-0.0.20.tgz
+    version: 0.0.20
+  - apiVersion: v2
+    appVersion: 0.0.12
+    created: "2025-06-08T03:17:20.242702923-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: b952354d7d06cf34b940e7a2482de6aff2c3c8ed68036c2683c3bb5e127ae2ac
     name: basic-app
@@ -13,7 +23,7 @@ entries:
     version: 0.0.19
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.404099442-03:00"
+    created: "2025-06-08T03:17:20.242064201-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: 1828f2be04a6c4e549d3e40c6d102ef1ce17ad431e2709a615bbc4f998c7d9b2
     name: basic-app
@@ -23,7 +33,7 @@ entries:
     version: 0.0.18
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.403602022-03:00"
+    created: "2025-06-08T03:17:20.241395868-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: b39e697914c7fa5da99b9b3f9f77071ca73d5a72b72c2fefa53a49d0354a703f
     name: basic-app
@@ -33,7 +43,7 @@ entries:
     version: 0.0.17
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.403153828-03:00"
+    created: "2025-06-08T03:17:20.240715814-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: 5cdbf5e06dd6e59b32a0910646feb73002470916f6782421abaccf70a6ca7d4a
     name: basic-app
@@ -43,7 +53,7 @@ entries:
     version: 0.0.16
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.402655159-03:00"
+    created: "2025-06-08T03:17:20.239985041-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: 4ec2abb435b8cce1ab9e33f279a7ebfb08e0c54888dce30fb06622b41070e333
     name: basic-app
@@ -53,7 +63,7 @@ entries:
     version: 0.0.15
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.402054585-03:00"
+    created: "2025-06-08T03:17:20.239211118-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: f3e7280459db3705ac49f7d636a384d071eaf9680cceb7483f90754e082a30df
     name: basic-app
@@ -63,7 +73,7 @@ entries:
     version: 0.0.14
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.401516548-03:00"
+    created: "2025-06-08T03:17:20.238333685-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: d92b86ed8eeac0e52bb26c7959c3f6672c2df96ec68c9a384774ccdbf70a1869
     name: basic-app
@@ -73,7 +83,7 @@ entries:
     version: 0.0.13
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.400972588-03:00"
+    created: "2025-06-08T03:17:20.237417811-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: 848c7faa41496cb8fabaa554d14fe313076a8ab8af3a216f96898af54549fa56
     name: basic-app
@@ -83,7 +93,7 @@ entries:
     version: 0.0.12
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.400368518-03:00"
+    created: "2025-06-08T03:17:20.234427976-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: c3383ac3d5cb761fd3274d1d57ba73ad8140b9bd7ec26592c5a52ebea1994fbe
     name: basic-app
@@ -93,7 +103,7 @@ entries:
     version: 0.0.11
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.399703926-03:00"
+    created: "2025-06-08T03:17:20.234041745-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: c6b7bb0e9478a39557c3d6d3add10345dfcf9dcbe4a6b2f17cf94d85bb229d26
     name: basic-app
@@ -103,7 +113,7 @@ entries:
     version: 0.0.10
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-06-08T03:16:00.404963619-03:00"
+    created: "2025-06-08T03:17:20.243992691-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: 3c6f973c8b3e64b6a1d7ec2868245d4efc18c5ee5c6a0e86920504d41fda024e
     name: basic-app
@@ -111,4 +121,4 @@ entries:
     urls:
     - https://providerocp.github.io/helm-chart/basic-app-0.0.9.tgz
     version: 0.0.9
-generated: "2025-06-08T03:16:00.398832902-03:00"
+generated: "2025-06-08T03:17:20.233536922-03:00"
