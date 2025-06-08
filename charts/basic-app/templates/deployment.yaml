@@ -32,9 +32,9 @@ spec:
         command: ['sh', '-c', 'echo "Waiting for ConfigMap..." && sleep 20']  
       {{- if .Values.efsInitContainer.enabled }} 
       initContainers:
-      - name: {{ include "basic-deployment.name" . }}-efs-check
-        image: busybox
-        command: ['sh', '-c', 'until mount -t nfs4 -o nfsvers=4.1 {{ .Values.efsInitContainer.pathEfs }}:/ /mnt; do echo "waiting for efs..."; sleep 3; done']
+      - name: {{ include "basic-deployment.name" . }}-wait-for-efs-check
+        image: amazonlinux
+        command: ['sh', '-c', 'until getent hosts fs-01608fe34d07a25cd.efs.us-east-1.amazonaws.com; do echo "waiting for DNS..."; sleep 3; done']
         volumeMounts:
         - name: temp-efs-check
           mountPath: /mnt
