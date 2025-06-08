@@ -33,7 +33,7 @@ spec:
       {{- if .Values.efsInitContainer.enabled }} 
       - name: {{ include "basic-deployment.name" . }}-wait-for-efs-check
         image: amazonlinux
-        command: ['sh', '-c', 'until getent hosts fs-01608fe34d07a25cd.efs.us-east-1.amazonaws.com; do echo "waiting for DNS..."; sleep 3; done']
+        command: ['sh', '-c', 'until getent hosts fs-01608fe34d07a25cd.efs.us-east-1.amazonaws.com; do echo "waiting for DNS..."; sleep 10; done']
         volumeMounts:
         - name: temp-efs-check
           mountPath: /mnt
