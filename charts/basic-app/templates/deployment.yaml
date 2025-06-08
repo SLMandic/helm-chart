@@ -34,7 +34,7 @@ spec:
       initContainers:
       - name: {{ include "basic-deployment.name" . }}-efs-check
         image: busybox
-        command: ['sh', '-c', 'until mount -t nfs4 -o nfsvers=4.1 {{ .Values.efs.pathEfs }}:/ /mnt; do echo "waiting for efs..."; sleep 3; done']
+        command: ['sh', '-c', 'until mount -t nfs4 -o nfsvers=4.1 {{ .Values.efsInitContainer.efs.pathEfs }}:/ /mnt; do echo "waiting for efs..."; sleep 3; done']
         volumeMounts:
         - name: temp-efs-check
           mountPath: /mnt
