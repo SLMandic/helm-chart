@@ -158,6 +158,10 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       volumes:
+      {{- if .Values.efsInitContainer.enabled }} 
+        - name: temp-efs-check
+          emptyDir: {}      
+      {{- end }}
       {{- if and .Values.secret.enabled (not (eq .Values.secret.mountPath "")) }}
         - name: {{ .Release.Name }}-secret
           secret:
