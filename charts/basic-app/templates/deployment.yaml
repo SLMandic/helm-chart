@@ -38,6 +38,10 @@ spec:
         volumeMounts:
         - name: temp-efs-check
           mountPath: /mnt
+        securityContext:
+          runAsUser: 0
+          runAsGroup: 0
+          privileged: true          
       volumes:
       - name: temp-efs-check
         emptyDir: {}      
