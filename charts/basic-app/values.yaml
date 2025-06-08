@@ -206,6 +206,13 @@ existingSecrets: []
 ## Storage ##
 #############
 
+
+# Caso seja efs, precisa de um initContainer para montar o efs antes do container principal
+# Para efs , garante que existe a instalação do driver efs csi no cluster e o efs seja criado antecipadamente na aws na mesma região e subnets id do cluster
+efsInitContainer:
+  enabled: false
+  pathEfs: path_efs  # Example: fs-01608fe34d07a25cd.efs.us-east-1.amazonaws.com     
+
 storage:
   enabled: false
   storageClassName: default

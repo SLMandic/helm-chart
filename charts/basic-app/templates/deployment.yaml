@@ -26,6 +26,22 @@ spec:
       labels:
         {{- include "basic-deployment.selectorLabels" . | nindent 8 }}
     spec:
+      initContainers:
+      - name: init-config
+        image: busybox
+        command: ['sh', '-c', 'echo "Waiting for ConfigMap..." && sleep 20']  
+      {{- if .Values.efsInitContainer.enabled }} 
+      initContainers:
+      - name: {{ include "basic-deployment.name" . }}-efs-check
+        image: busybox
+        command: ['sh', '-c', 'until mount -t nfs4 -o nfsvers=4.1 {{ .Values.efs.pathEfs }}:/ /mnt; do echo "waiting for efs..."; sleep 3; done']
+        volumeMounts:
+        - name: temp-efs-check
+          mountPath: /mnt
+      volumes:
+      - name: temp-efs-check
+        emptyDir: {}      
+      {{- end }}    
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
