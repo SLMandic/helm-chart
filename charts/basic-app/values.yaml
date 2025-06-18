@@ -151,6 +151,7 @@ externalSecrets:
   enabled: false
   refreshInterval: "1m"
   secretStoreRef: "secretstore-gcp"    
+  keySuffix: "stg" #dev prod ...
 
 nodeSelector: {}
 
