@@ -18,9 +18,9 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
-    - port: 3000
+    - port: 9194
       protocol: TCP
-      name: http-metrics  
+      name: orleans  
   selector:
     {{- include "basic-deployment.selectorLabels" . | nindent 4 }}
 {{- end }}
