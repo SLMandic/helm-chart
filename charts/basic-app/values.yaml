@@ -61,8 +61,8 @@ envFrom: {}
 #      PASSWORD: plaintext-password
 #    optional: false
 
-imagePullSecrets:
-  - name: github-secret
+# imagePullSecrets:
+#   - name: github-secret
 
 podAnnotations: {}
 
