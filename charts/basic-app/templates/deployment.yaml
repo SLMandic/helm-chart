@@ -133,6 +133,9 @@ spec:
             - mountPath: {{ .Values.secret.mountPath }}
               name: {{ .Release.Name }}-secret
           {{- end }}
+          {{- with .Values.extraVolumeMounts }}
+          {{- toYaml . | nindent 12 }}
+          {{- end }}
           {{- range $i, $v := .Values.existingSecrets }}
           {{- if and ( default "" $v.mountPath ) ( default "" $v.secretName ) }}
             - mountPath: {{ $v.mountPath }}
@@ -186,4 +189,7 @@ spec:
         - name: {{ .Release.Name }}-data
           persistentVolumeClaim:
             claimName: {{ .Release.Name }}-data
+      {{- end }}
+      {{- with .Values.extraVolumes }}
+      {{- toYaml . | nindent 8 }}
       {{- end }}
