@@ -71,27 +71,7 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           env:                      
-            {{- toYaml .Values.env | nindent 12 }}
-            - name: ORLEANS_SERVICE_ID
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.labels['orleans/serviceId']
-            - name: ORLEANS_CLUSTER_ID
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.labels['orleans/clusterId']
-            - name: POD_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
-            - name: POD_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.name
-            - name: POD_IP
-              valueFrom:
-                fieldRef:
-                  fieldPath: status.podIP            
+            {{- toYaml .Values.env | nindent 12 }}          
           {{- if .Values.envFrom }}
           envFrom:
           {{- range $i, $v := .Values.envFrom.configMaps }}
