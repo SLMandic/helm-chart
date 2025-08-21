@@ -3,16 +3,6 @@ entries:
   basic-app:
   - apiVersion: v2
     appVersion: 0.0.12
-    created: "2025-08-21T01:36:50.619925341-03:00"
-    description: A Helm chart for simple Kubernetes applications
-    digest: d87a0edf324da567eb28990c656b28a54dc6aab753493353f561a832b05888d9
-    name: basic-app
-    type: application
-    urls:
-    - https://slmandic.github.io/helm-chart/basic-app-0.1.4.tgz
-    version: 0.1.4
-  - apiVersion: v2
-    appVersion: 0.0.12
     created: "2025-08-21T01:36:50.619567977-03:00"
     description: A Helm chart for simple Kubernetes applications
     digest: ff7a52ca182d4739a02cd445adf915d1c0a677a38804b63008e778035e5d3c39
