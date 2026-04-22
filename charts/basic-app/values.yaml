@@ -262,6 +262,7 @@ ingress:
   className: nginx
   # end className
   annotations: {}
+  labels: {}
   hosts:
   - name: exemplo.com
     # if kubernetes above 1.20 and have ingressClassName, inform here
