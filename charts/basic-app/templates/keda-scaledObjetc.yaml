@@ -10,9 +10,9 @@ spec:
     apiVersion: apps/v1
     kind: Deployment  
     name:  {{ include "basic-deployment.name" . }}
-  minReplicaCount: {{ .Values.keda.minReplicaCount | default "1" }}
+  minReplicaCount: {{ .Values.keda.minReplicaCount }}
   maxReplicaCount: {{ .Values.keda.maxReplicaCount | default "1" }}
-  cooldownPeriod: {{ .Values.keda.cooldownPeriod | default "300" }}
+  cooldownPeriod: {{ .Values.keda.cooldownPeriod | default "60" }}
   pollingInterval: {{ .Values.keda.pollingInterval | default "30" }}
   triggers:
   {{- toYaml .Values.keda.triggers | nindent 4 }}
