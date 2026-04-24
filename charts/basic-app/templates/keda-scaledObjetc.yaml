@@ -16,7 +16,7 @@ spec:
   pollingInterval: {{ .Values.keda.pollingInterval | default "30" }}
   triggers:
   {{- toYaml .Values.keda.triggers | nindent 4 }}
-  fallback:  # Qualquer problema no seu cluster que impeça o HPA de funcionar, essa regra será ativada
-    failureThreshold: {{ .Values.keda.failureThreshold | default "2" }} # Quantas vezes o HPA pode falhar antes de ativar o fallback
-    replicas: {{ .Values.keda.minReplicaCount | default "1" }}  # Define a quantidade de réplicas quando a métrica não está disponível  
+  # fallback:  # Qualquer problema no seu cluster que impeça o HPA de funcionar, essa regra será ativada
+  #   failureThreshold: {{ .Values.keda.failureThreshold | default "2" }} # Quantas vezes o HPA pode falhar antes de ativar o fallback
+  #   replicas: {{ .Values.keda.minReplicaCount | default "1" }}  # Define a quantidade de réplicas quando a métrica não está disponível  
 {{- end }}
