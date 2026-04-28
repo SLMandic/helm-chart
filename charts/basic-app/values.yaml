@@ -161,6 +161,9 @@ externalSecrets:
   secretName: ""
   refreshInterval: "1m"
   secretStoreRef: "secretstore-eks"
+  envFile:
+    enabled: false
+    key: ".env"
 
 nodeSelector: {}
 
