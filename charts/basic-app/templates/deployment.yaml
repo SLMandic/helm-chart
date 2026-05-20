@@ -28,7 +28,7 @@ spec:
     spec:
       initContainers:
       - name: init-config
-        image: busybox
+        image: 289260207006.dkr.ecr.us-east-1.amazonaws.com/busybox:latest
         command: ['sh', '-c', 'echo "Waiting for ConfigMap..." && sleep 20']  
       {{- if .Values.efsInitContainer.enabled }} 
       - name: {{ include "basic-deployment.name" . }}-wait-for-efs-check
