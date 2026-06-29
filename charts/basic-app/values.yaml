@@ -13,6 +13,9 @@ image:
   repository: ""
   pullPolicy: IfNotPresent
 
+initConfig:
+  image: 289260207006.dkr.ecr.us-east-1.amazonaws.com/busybox:latest
+
 strategy:
   type: RollingUpdate
   rollingUpdate:
